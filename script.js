@@ -9,8 +9,6 @@ let lowerCaseArr =['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', '
 let numberArr =['1', '2', '3', '4', '5', '6', '7', '8', '9', '0',  ];
 
 
-
-
 // Get references to the #generate element
 let generateBtn = document.querySelector("#generate");
 
@@ -20,13 +18,11 @@ generateBtn.addEventListener("click", writePassword);
 // Write password to the #password input
 function writePassword() {
     let correctPassword = promptQuestions();
-    
+    let passwordText = document.querySelector("#password");
    
 
     if (correctPassword){
         let password = generatePassword();
-        let passwordText = document.querySelector("#password");
-       
         passwordText.value = password;// This code allows the password to be displayed on the page!
         
     }
@@ -37,13 +33,13 @@ function writePassword() {
   
 }
 
- function generatePassword () {
+ function generatePassword() {
         let password = " ";
         for (let i = 0; i < passwordLength; i++) {
             let randomIndex = Math.floor(Math.random( ) * choiceArr.length);
             password = password + choiceArr[randomIndex];
         }
-      
+      return password;
     }
    
 
@@ -92,9 +88,9 @@ function promptQuestions() {
  
 
 
-
-
-
+// writePassword();
+// promptQuestions();
+// generatePassword();
 
 
 
